@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f9"
+        android:padding="4dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipAuto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipsame10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="အပူး ၁၀ ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPower5"
+                    android:layout_width="96dp"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="ပါဝါ 10 ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNatKha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="နက်ခ 10 ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNyiKo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="ညီကို ၁၀ ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNyiKo20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="ညီကို 20 ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBack10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="နောက်ပိတ် ၁၀ ကွက်"
+                    android:textAlignment="center"
+
+                    app:chipCornerRadius="8dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFront10"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="ထိပ် စီး ၁၀ ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBreak"
+                    android:layout_width="96dp"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="ဘရိတ်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFrontBack19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:checkable="true"
+                    android:gravity="center"
+                    android:text="ရှေ့နောက်ပိတ် ၁၉ ကွက်"
+                    android:textAlignment="center"
+                    app:chipCornerRadius="8dp" />
+            </com.google.android.material.chip.ChipGroup>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recNumberf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+
+            android:visibility="visible"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recNumberf"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="R"
+                    android:textSize="26dp"
+
+                    android:textStyle="bold"
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/tvNo_t3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNo_t3" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvNo_t3"
+                    style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                    android:layout_width="96dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvNo"
+                        style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="No."
+                        android:inputType="numberSigned"
+
+                        android:textSize="22dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvAmount"
+
+                    style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnConfirm"
+                    app:layout_constraintStart_toEndOf="@+id/tvNo_t3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvAmount_te"
+                        style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Amount"
+                        android:inputType="numberSigned"
+                        android:textSize="22dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tvAmountR"
+
+                    style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/btnConfirm"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNo_t3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvAmount_teR"
+                        style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="R Amount"
+                        android:inputType="numberSigned"
+                        android:textSize="22dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Generate"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvAmountR"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvAmount" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

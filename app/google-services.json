@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "863733986779",
+    "firebase_url": "https://ptta-ccc6c-default-rtdb.firebaseio.com",
+    "project_id": "ptta-ccc6c",
+    "storage_bucket": "ptta-ccc6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863733986779:android:48737bb581fa68d98663fe",
+        "android_client_info": {
+          "package_name": "com.mtz.ptta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863733986779-5sockva7u1l0d1tsrtats10p0lgjmg12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvdKtUcnV2C9G97A3-_SG0JLUYtV2-L4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863733986779-5sockva7u1l0d1tsrtats10p0lgjmg12.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
