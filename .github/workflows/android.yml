@@ -3,7 +3,7 @@ name: Build APK
 on:
   push:
     branches:
-      - main  # or 'master' or any branch you want to target
+      - main
 
 jobs:
   build:
@@ -30,3 +30,8 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Send APK to Telegram
+        if: success()
+        run: |
+          curl -F "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" -F document=@"app/build/outputs/apk/debug/app-debug.apk" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument"
