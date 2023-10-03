@@ -848,7 +848,7 @@ class AutoNumberSheetDialog : Sheet() {
                 for (i in 0..9) {
                     numberList.add(NOTD(no = "${number}${i}"))
                 }
-n
+
 
                 for (i in 0..9) {
                     if (i != number) numberList.add(NOTD(no = "${i}${number}"))
