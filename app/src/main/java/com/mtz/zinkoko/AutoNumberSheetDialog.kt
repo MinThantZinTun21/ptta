@@ -26,7 +26,7 @@ import com.mtz.zinkoko.data.Repository
 
 class AutoNumberSheetDialog : Sheet() {
     val adapterNo by lazy {
-        RecAdapter(arrayListOf())
+        RecAdapter(arrayListOf()) { }
     }
 
     val onPositiveListener: PositiveListener = object : PositiveListener {
@@ -74,6 +74,7 @@ class AutoNumberSheetDialog : Sheet() {
                         numberList.add(NOTD(no = "${i}${i}"))
                     }
                     view.findViewById<CardView>(R.id.cardAmount).visibility = View.VISIBLE
+                    view.findViewById<Button>(R.id.btnConfirm).visibility = View.VISIBLE
                     view.findViewById<TextInputLayout>(R.id.tvNo_t3).visibility = View.GONE
                     adapterNo.setData(numberList)
 
@@ -186,6 +187,7 @@ class AutoNumberSheetDialog : Sheet() {
                         NOTD(no = "90", amount = 0),
                     )
                     view.findViewById<CardView>(R.id.cardAmount).visibility = View.VISIBLE
+
                     view.findViewById<TextInputLayout>(R.id.tvNo_t3).visibility = View.GONE
                     adapterNo.setData(numberList)
                 }
@@ -779,12 +781,15 @@ class AutoNumberSheetDialog : Sheet() {
                         }
                     }
 
+
+
                     10 -> {
                         numberList.add(NOTD(no = "55", amount = 0))
                         numberList.add(NOTD(no = "28", amount = 0))
                         numberList.add(NOTD(no = "37", amount = 0))
                         numberList.add(NOTD(no = "46", amount = 0))
                         numberList.add(NOTD(no = "91", amount = 0))
+
                         adapterNo.setData(numberList)
                         val data = adapterNo.data.map {
                             it.copy(
@@ -843,6 +848,7 @@ class AutoNumberSheetDialog : Sheet() {
                 for (i in 0..9) {
                     numberList.add(NOTD(no = "${number}${i}"))
                 }
+n
 
                 for (i in 0..9) {
                     if (i != number) numberList.add(NOTD(no = "${i}${number}"))

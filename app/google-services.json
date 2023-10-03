@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "863733986779",
-    "firebase_url": "https://ptta-ccc6c-default-rtdb.firebaseio.com",
-    "project_id": "ptta-ccc6c",
-    "storage_bucket": "ptta-ccc6c.appspot.com"
+    "project_number": "725605432286",
+    "firebase_url": "https://ptt2-89841-default-rtdb.firebaseio.com",
+    "project_id": "ptt2-89841",
+    "storage_bucket": "ptt2-89841.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:863733986779:android:48737bb581fa68d98663fe",
+        "mobilesdk_app_id": "1:725605432286:android:61ed91707888d06abb7b4f",
         "android_client_info": {
-          "package_name": "com.mtz.ptta"
+          "package_name": "com.mtz.ptta.second"
         }
       },
       "oauth_client": [
         {
-          "client_id": "863733986779-5sockva7u1l0d1tsrtats10p0lgjmg12.apps.googleusercontent.com",
+          "client_id": "725605432286-4o8u09tg0ucn70lup9rbsastl65s20kc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAvdKtUcnV2C9G97A3-_SG0JLUYtV2-L4M"
+          "current_key": "AIzaSyAm2FFO5VVjUkSyUBAHP-_1ksUeBh4jtM4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "863733986779-5sockva7u1l0d1tsrtats10p0lgjmg12.apps.googleusercontent.com",
+              "client_id": "725605432286-4o8u09tg0ucn70lup9rbsastl65s20kc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

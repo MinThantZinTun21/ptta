@@ -2,6 +2,7 @@ package com.mtz.zinkoko
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
@@ -27,10 +28,10 @@ import com.mtz.zinkoko.data.WeeklyReport
 import com.mtz.zinkoko.util.DateUtil
 
 class MainActivity : AppCompatActivity() {
-    var adapterRec = RecAdapter(arrayListOf())
+    var adapterRec = RecAdapter(arrayListOf()) {
+        goToNumberListActivity(it)
+    }
     private var mediaPlayer: MediaPlayer? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,18 +39,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.tvNo).addTextChangedListener {
             it?.let {
                 if (it.length >= 2) {
-                    if (it.contains("11").not() && it.contains("00").not()) {
-                        findViewById<EditText>(R.id.tvAmount).requestFocus()
-                    } else if (it.length == 3) {
-                        findViewById<EditText>(R.id.tvAmount).requestFocus()
-
-                    }
-
-
-                } else if (it.length == 3) {
                     findViewById<EditText>(R.id.tvAmount).requestFocus()
-
-                }
+                11}
 
             }
         }
@@ -71,18 +62,33 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.save).setOnClickListener {
             val no = findViewById<EditText>(R.id.tvNo).text.toString()
             val amount = findViewById<EditText>(R.id.tvAmount).text.toString()
-            if (no.length > 2 && no.contains("00")) {
+
+            val first = no[0]
+            val second = no[1]
+            if (first == second) {
+                saveData(NOTD(no = no, amount = amount.toInt()))
+            } else {
+                if (findViewById<CheckBox>(R.id.reverse).isChecked) {
+                    saveData(NOTD(no = no, amount = amount.toInt()))
+
+                    val rno = no.reversed()
+
+                    saveData(NOTD(no = rno, amount = amount.toInt()))
+                } else {
+                    saveData(NOTD(no = no, amount = amount.toInt()))
+                }
+            }
+
+            /*if (no.length > 2 && no.contains("00")) {
                 val firstNumber = no.substring(2)
                 for (i in 0..9) {
                     Log.d("firstNO", firstNumber.toString())
                     try {
                         saveData(NOTD(no = "$firstNumber$i", amount = amount.toInt()))
-
                     } catch (e: Exception) {
                         Toast.makeText(baseContext, "..", Toast.LENGTH_SHORT).show()
                     }
                 }
-
             } else if (no.length > 2 && no.contains("11")) {
 
                 val firstNumber = no.substring(2)
@@ -90,7 +96,6 @@ class MainActivity : AppCompatActivity() {
                     Log.d("firstNO", firstNumber.toString())
                     try {
                         saveData(NOTD(no = "$firstNumber$i", amount = amount.toInt()))
-
                     } catch (e: Exception) {
                         Toast.makeText(baseContext, "..", Toast.LENGTH_SHORT).show()
                     }
@@ -99,24 +104,18 @@ class MainActivity : AppCompatActivity() {
                     try {
                         if (i != firstNumber.toInt()) {
                             saveData(NOTD(no = "$i$firstNumber", amount = amount.toInt()))
-
                         }
-
                     } catch (e: Exception) {
                         Toast.makeText(baseContext, "..", Toast.LENGTH_SHORT).show()
                     }
                 }
-
-
             } else {
                 try {
                     saveData(NOTD(no = no, amount = amount.toInt()))
-
                 } catch (e: Exception) {
                     Toast.makeText(baseContext, "..", Toast.LENGTH_SHORT).show()
                 }
-            }
-
+            }*/
 
         }
         readReport()
@@ -164,10 +163,7 @@ class MainActivity : AppCompatActivity() {
             totalAmount = findViewById<TextView>(R.id.textView).text.toString().toInt()
         )
         Repository.createWeeklyReport(data)
-
-
     }
-
 
     private fun readReport() {
         Repository.readWeeklyReport { data ->
@@ -189,7 +185,12 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+    }
 
+    fun goToNumberListActivity(no: Int) {
+        val intent = Intent(this, NumberListActivity::class.java)
+        intent.putExtra("no", no)
+        startActivity(intent)
     }
 
     private fun saveData(data: NOTD) {
